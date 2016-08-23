@@ -22,6 +22,8 @@ public class LoginService {
             result.setLoginResult(true);
             result.setSession("aabbcc");
             result.setLoginMessage("登录成功");
+            
+            //todo: 调用 DataService 记录 用户Session
         }
         else{
             result.setLoginResult(false);
