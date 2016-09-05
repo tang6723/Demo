@@ -12,6 +12,20 @@ import java.util.Date;
  */
 public class UserStatus {
     
+    public UserStatus(){
+        
+    }
+    
+    /*
+     * 针对用户登陆
+     */
+    public UserStatus(UserLoginInfo loginInfo, String session){
+        this._lastUpdateTime = new Date();
+        this._loginTime = new Date();
+        this._session = session;
+        this._userName = loginInfo.getUserName();
+    }
+    
     private String _userName;
     
     public void setUserName(String userName){
@@ -40,6 +54,16 @@ public class UserStatus {
     
     public Date getLoginTime(){
         return this._loginTime;
+    }
+    
+    private Date _lastUpdateTime;
+    
+    public void setLastUpdateTime(Date date){
+        this._lastUpdateTime = date;
+    }
+    
+    public Date getLastUpdateTime(){
+        return this._lastUpdateTime;
     }
     
 }

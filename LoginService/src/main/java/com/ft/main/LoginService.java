@@ -7,6 +7,8 @@ package com.ft.main;
 
 import com.ft.model.LoginResult;
 import com.ft.model.UserLoginInfo;
+import com.ft.model.UserStatus;
+import com.ft.session.Pool;
 
 /*
  * @author huming
@@ -14,7 +16,6 @@ import com.ft.model.UserLoginInfo;
 public class LoginService {
     
     public LoginResult login(UserLoginInfo user){
-        
         LoginResult result = new LoginResult();
         
         if ("test".equals(user.getUserName()) && "".equals(user.getPassword()))
@@ -23,7 +24,12 @@ public class LoginService {
             result.setSession("aabbcc");
             result.setLoginMessage("登录成功");
             
-            //todo: 调用 DataService 记录 用户Session
+            UserStatus status = new UserStatus(
+               user,
+               generateSession(user)
+            );
+            
+            Pool.addUserStatus(status);
         }
         else{
             result.setLoginResult(false);
@@ -33,4 +39,21 @@ public class LoginService {
         return result;
     }
     
+    /*
+     * 验证用户状态是否还有效
+     * @return True   验证通过
+     *                False  验证未通过
+     */
+    public boolean validateUserStatus(UserStatus status){
+        return Pool.existUserStatus(status);
+    }
+    
+    /*
+     * todo: 生成 Session
+     * 设计一个Session生成算法
+     */
+    private String generateSession(UserLoginInfo user){
+       return "abc";
+    }
+
 }
