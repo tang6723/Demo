@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ft.main;
+package com.ft.dataCache;
 
-import com.ft.dataCache.SessionPool;
-import com.ft.model.*;
+import com.ft.model.UserStatus;
 
 /*
- * @author huming
+ * @author Ming
  */
-public class DataService {
+public class SessionPool extends Cache {
+
     
-    
-    
-}   
+}

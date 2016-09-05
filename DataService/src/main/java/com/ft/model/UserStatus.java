@@ -18,6 +18,9 @@ public class UserStatus {
         this._userName = userName;
     }
     
+    /*
+     * 用户名需要确保唯一
+     */
     public String getUserName(){
         return this._userName;
     }
@@ -41,5 +44,4 @@ public class UserStatus {
     public Date getLoginTime(){
         return this._loginTime;
     }
-    
 }
