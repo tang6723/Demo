@@ -27,7 +27,7 @@ public class Pool {
      * 保存用户Session
      */
     public static void addUserStatus(UserStatus status) {
-        //getRedis().set(RedisPrefix + status.getUserName(), status.getSession());
+        SessionPool.put(status.getUserName(), status);
     }
 
     /*
@@ -44,7 +44,5 @@ public class Pool {
     public static void clearInvalidSession(){
         
     }
-    
-    
     
 }

@@ -9,6 +9,7 @@ import com.ft.model.LoginResult;
 import com.ft.model.UserLoginInfo;
 import com.ft.model.UserStatus;
 import com.ft.session.Pool;
+import java.util.UUID;
 
 /*
  * @author huming
@@ -49,11 +50,11 @@ public class LoginService {
     }
     
     /*
-     * todo: 生成 Session
+     * todo: 根据用户信息生成 Session
      * 设计一个Session生成算法
      */
     private String generateSession(UserLoginInfo user){
-       return "abc";
+       return UUID.randomUUID().toString();
     }
 
 }
