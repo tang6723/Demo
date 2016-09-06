@@ -5,7 +5,6 @@
  */
 package com.ft.main;
 
-import com.ft.dataCache.SessionPool;
 import com.ft.model.*;
 
 /*
