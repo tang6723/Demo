@@ -5,12 +5,30 @@
  */
 package com.ft.main;
 
-import com.ft.model.*;
+import com.ft.db.mapping.User;
 
 /*
  * @author huming
  */
 public class DataService {
+    
+    public DataService(){
+        
+    }
+    
+    /*
+     * 
+    */
+    public User getUser(String userName){
+        return null;
+    }
+    
+    /*
+     *
+     */
+    public void addUser(User user){
+                
+    }
     
     
     
