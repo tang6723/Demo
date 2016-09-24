@@ -12,7 +12,7 @@ package com.ft.main;
 public class BusinessService {
     
     public String getTestData(){
-        return "test";
+        return "Test hello world";
     }
     
 }
